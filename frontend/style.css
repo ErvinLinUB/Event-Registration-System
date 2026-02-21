@@ -47,7 +47,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .name {
   color: var(--ctp-sapphire);
-  margin-top: 14rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 label {
