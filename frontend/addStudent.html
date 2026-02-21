@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Student</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Add Student</h2>
+
+  <form id="studentForm">
+    <input id="studentId" placeholder="Student ID (auto-generated)" readonly>
+    <input id="fname" placeholder="First Name" required>
+    <input id="lname" placeholder="Last Name" required>
+    <select id="department" required>
+      <option value="">Select Department</option>
+      <option value="CS">Computer Science</option>
+      <option value="EE">Electrical Engineering</option>
+      <option value="ME">Mechanical Engineering</option>
+      <option value="BA">Business Administration</option>
+    </select>
+    <button type="submit">Add Student</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script src="studentScript.js"></script>
+</body>
+</html>

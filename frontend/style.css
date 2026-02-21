@@ -1,0 +1,180 @@
+/* Catppuccin Mocha Theme */
+:root {
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ctp-lavender);
+  font-weight: 600;
+  text-align: center;
+}
+
+.name {
+  color: var(--ctp-sapphire);
+  margin-top: 14rem;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: var(--ctp-subtext1);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 12px;
+  width: 100%;
+  background-color: var(--ctp-surface0);
+  border: 1px solid var(--ctp-surface2);
+  color: var(--ctp-text);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--ctp-lavender);
+  box-shadow: 0 0 0 3px rgba(180, 190, 254, 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--ctp-subtext0);
+}
+
+button {
+  display: block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: var(--ctp-lavender);
+  color: var(--ctp-base);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--ctp-blue);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: var(--ctp-surface2);
+  cursor: not-allowed;
+  color: var(--ctp-subtext0);
+}
+
+.container {
+  background-color: var(--ctp-mantle);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--ctp-surface1);
+}
+
+.message {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.success {
+  background-color: rgba(166, 227, 161, 0.1);
+  color: var(--ctp-green);
+  border: 1px solid var(--ctp-green);
+}
+
+.error {
+  background-color: rgba(243, 139, 168, 0.1);
+  color: var(--ctp-red);
+  border: 1px solid var(--ctp-red);
+}
+
+.info {
+  background-color: rgba(137, 180, 250, 0.1);
+  color: var(--ctp-blue);
+  border: 1px solid var(--ctp-blue);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background-color: var(--ctp-surface0);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--ctp-surface1);
+}
+
+th {
+  background-color: var(--ctp-surface1);
+  color: var(--ctp-lavender);
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: var(--ctp-surface1);
+}
+
+a {
+  color: var(--ctp-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--ctp-sky);
+  text-decoration: underline;
+}
