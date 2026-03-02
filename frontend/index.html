@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Event Registration - Main Menu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Event Registration System</h1>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-dot"></span>
+      Event Registration System
+    </a>
+    <ul class="navbar-links">
+      <li><a href="addStudent.html">Students</a></li>
+      <li><a href="addEvent.html">Events</a></li>
+      <li><a href="registration.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="page-header">
+      <h1>Event Registration System</h1>
+      <p class="subtitle">Manage students, events, and registrations</p>
+    </div>
 
     <div class="name">
-    <p>
-      Ervin Lin <br>
-      Object Oriented System Development <br>
-      Assignment 1
-    </p>
-  </div>
+      <strong>Ervin Lin</strong>
+      Object Oriented System Development - Assignment 1
+    </div>
 
-  <div class="button-container">
-    <button id="btnStudents">Students</button>
-    <button id="btnEvents">Events</button>
-    <button id="btnRegistration">Registration</button>
+    <div class="container">
+      <div class="button-container">
+        <button id="btnStudents">Students</button>
+        <button id="btnEvents">Events</button>
+        <button id="btnRegistration">Registration</button>
+      </div>
+    </div>
+
   </div>
 
   <script src="nav.js"></script>

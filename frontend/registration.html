@@ -1,19 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register Student</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Register Student to Event</h2>
 
-  <form id="registerForm">
-    <input id="studentId" placeholder="Student ID" type="number" required>
-    <input id="eventId" placeholder="Event ID" type="number" required>
-    <button type="submit">Register</button>
-  </form>
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-dot"></span>
+      Event Registration System
+    </a>
+    <ul class="navbar-links">
+      <li><a href="addStudent.html">Students</a></li>
+      <li><a href="addEvent.html">Events</a></li>
+      <li><a href="registration.html" class="active">Register</a></li>
+    </ul>
+  </nav>
 
-  <p id="message"></p>
+  <div class="page-wrapper">
+
+    <div class="page-header">
+      <h2>Register Student to Event</h2>
+      <p class="subtitle">Link a student to an existing event</p>
+    </div>
+
+    <div class="container">
+      <form id="registerForm">
+
+        <div class="form-group">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" type="number" placeholder="e.g. 1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="eventId">Event ID</label>
+          <input id="eventId" type="number" placeholder="e.g. 1" required>
+        </div>
+
+        <button type="submit">Register</button>
+
+      </form>
+
+      <p id="message"></p>
+    </div>
+
+  </div>
 
   <script src="registrationScript.js"></script>
 </body>

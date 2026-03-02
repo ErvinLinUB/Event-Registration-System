@@ -1,27 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Student</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Add Student</h2>
 
-  <form id="studentForm">
-    <input id="studentId" placeholder="Student ID (auto-generated)" readonly>
-    <input id="fname" placeholder="First Name" required>
-    <input id="lname" placeholder="Last Name" required>
-    <select id="department" required>
-      <option value="">Select Department</option>
-      <option value="CS">Computer Science</option>
-      <option value="EE">Electrical Engineering</option>
-      <option value="ME">Mechanical Engineering</option>
-      <option value="BA">Business Administration</option>
-    </select>
-    <button type="submit">Add Student</button>
-  </form>
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-dot"></span>
+      Event Registration System
+    </a>
+    <ul class="navbar-links">
+      <li><a href="addStudent.html" class="active">Students</a></li>
+      <li><a href="addEvent.html">Events</a></li>
+      <li><a href="registration.html">Register</a></li>
+    </ul>
+  </nav>
 
-  <p id="message"></p>
+  <div class="page-wrapper">
+
+    <div class="page-header">
+      <h2>Add Student</h2>
+      <p class="subtitle">Register a new student into the system</p>
+    </div>
+
+    <div class="container">
+      <form id="studentForm">
+
+        <div class="form-group">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" placeholder="Auto-generated after submission" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input id="fname" placeholder="e.g. Jane" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input id="lname" placeholder="e.g. Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" required>
+            <option value="">Select Department</option>
+            <option value="CS">Computer Science</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="BA">Business Administration</option>
+          </select>
+        </div>
+
+        <button type="submit">Add Student</button>
+
+      </form>
+
+      <p id="message"></p>
+    </div>
+
+  </div>
 
   <script src="studentScript.js"></script>
 </body>
