@@ -4,7 +4,13 @@
 
  How to run the system:
 
-1. A proper database must be created. You can use the SQL snippet below:
+1. Download and install Node.js at https://nodejs.org/.
+
+2. Verify it is installed by running `node -v` and `npm -v` in the terminal.
+
+3. Install the correct packages by running `npm install express cors pg` and `npm install typescript --save-dev` in the terminal.
+
+4. A proper database must be created using PostgreSQL. You can use the SQL snippet below:
 
 ``` sql
 CREATE TABLE students (
@@ -31,11 +37,11 @@ CREATE TABLE registrations (
 );
 ```
 
-2. Go to `db > dbConnection.js` and change the database name and password to your appropriate one.
+5. Go to `db > dbConnection.js` and change the database name and password to your appropriate one.
 
-3. In the terminal, run `node app.js`.
+6. In the terminal, run `node app.js`.
 
-4. On a browser, go to http://localhost:3000/
+7. On a browser, go to http://localhost:3000/
 
 Completion Date: March 1st, 2026
 
