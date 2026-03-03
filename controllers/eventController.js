@@ -13,16 +13,24 @@ const addEvent = async (req, res) => {
   }
 };
 
+const getEvents = async (req, res) => {
+  try {
+    const event = new Event();
+    const events = await event.getEvents();
+    res.json(events);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch events" });
+  }
+};
+
 const getEvent = async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
-    const result = await pool.query(
-      `SELECT eventid, eventname, eventdate, numofparticipantsregistered, maxparticipants
-       FROM events WHERE eventid = $1`,
-      [id]
-    );
-    if (result.rows.length === 0) return res.status(404).json({ error: "Event not found" });
-    res.json(result.rows[0]);
+    const event = new Event();
+    const result = await event.getEventById(id);
+    if (!result) return res.status(404).json({ error: "Event not found" });
+    res.json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch event" });
@@ -45,8 +53,16 @@ const updateEvent = async (req, res) => {
   }
 };
 
-module.exports = {
-  addEvent,
-  getEvent,
-  updateEvent
+const registerStudent = async (req, res) => {
+  try {
+    const { studentId, eventId } = req.body;
+    await Event.registerStudent(Number(studentId), Number(eventId));
+    res.json({ message: "Student registered to event" });
+  } catch (err) {
+    console.error(err);
+    const status = err.message === "Event not found" ? 404 : 400;
+    res.status(status).json({ error: err.message || "Failed to register student" });
+  }
 };
+
+module.exports = { addEvent, getEvents, getEvent, updateEvent, registerStudent };

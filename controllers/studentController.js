@@ -13,16 +13,24 @@ const addStudent = async (req, res) => {
   }
 };
 
+const getStudents = async (req, res) => {
+  try {
+    const student = new Student();
+    const students = await student.getStudents();
+    res.json(students);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch students" });
+  }
+};
+
 const getStudent = async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
-    const result = await pool.query(
-      `SELECT studentid, firstname, lastname, department FROM students WHERE studentid = $1`,
-      [id]
-    );
-    if (result.rows.length === 0) return res.status(404).json({ error: "Student not found" });
-    // return keys as the DB provides (studentID) — controllers respond with DB row
-    res.json(result.rows[0]);
+    const student = new Student();
+    const result = await student.getStudentById(id);
+    if (!result) return res.status(404).json({ error: "Student not found" });
+    res.json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch student" });
@@ -45,4 +53,4 @@ const updateStudent = async (req, res) => {
   }
 };
 
-module.exports = { addStudent, getStudent, updateStudent };
+module.exports = { addStudent, getStudents, getStudent, updateStudent };

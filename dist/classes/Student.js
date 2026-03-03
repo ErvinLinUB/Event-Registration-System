@@ -9,9 +9,9 @@ const dbconnection_1 = __importDefault(require("../db/dbconnection"));
 class Student extends StudentDef_1.StudentDef {
     constructor(firstname, lastname, department) {
         super();
-        this.setFirstName(firstname);
-        this.setLastName(lastname);
-        this.setDepartment(department);
+        if (firstname) this.setFirstName(firstname);
+        if (lastname) this.setLastName(lastname);
+        if (department) this.setDepartment(department);
     }
     getStudentId() { return this.studentid; }
     getFirstName() { return this.firstname; }
@@ -22,10 +22,25 @@ class Student extends StudentDef_1.StudentDef {
     setLastName(lastname) { this.lastname = lastname; }
     setDepartment(department) { this.department = department; }
     async addStudent() {
-        const result = await dbconnection_1.default.query(`INSERT INTO students (firstname, lastname, department)
-       VALUES ($1, $2, $3) RETURNING studentid`, [this.firstname, this.lastname, this.department]);
+        const result = await dbconnection_1.default.query(
+            `INSERT INTO students (firstname, lastname, department) VALUES ($1, $2, $3) RETURNING studentid`,
+            [this.firstname, this.lastname, this.department]
+        );
         this.setStudentId(result.rows[0].studentid);
         return this.getStudentId();
+    }
+    async getStudents() {
+        const result = await dbconnection_1.default.query(
+            `SELECT studentid, firstname, lastname, department FROM students`
+        );
+        return result.rows;
+    }
+    async getStudentById(id) {
+        const result = await dbconnection_1.default.query(
+            `SELECT studentid, firstname, lastname, department FROM students WHERE studentid = $1`,
+            [id]
+        );
+        return result.rows[0] || null;
     }
 }
 exports.Student = Student;
