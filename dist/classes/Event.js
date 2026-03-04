@@ -34,19 +34,6 @@ class Event extends EventDef_1.EventDef {
         this.setEventId(result.rows[0].eventid);
         return this.getEventId();
     }
-    async getEvents() {
-        const result = await dbconnection_1.default.query(
-            `SELECT eventid, eventname, eventdate, numofparticipantsregistered, maxparticipants FROM events`
-        );
-        return result.rows;
-    }
-    async getEventById(id) {
-        const result = await dbconnection_1.default.query(
-            `SELECT eventid, eventname, eventdate, numofparticipantsregistered, maxparticipants FROM events WHERE eventid = $1`,
-            [id]
-        );
-        return result.rows[0] || null;
-    }
     static async registerStudent(studentId, eventId) {
         const existing = await dbconnection_1.default.query(
             `SELECT * FROM registrations WHERE studentid = $1`,

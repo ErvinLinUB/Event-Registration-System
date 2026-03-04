@@ -29,18 +29,5 @@ class Student extends StudentDef_1.StudentDef {
         this.setStudentId(result.rows[0].studentid);
         return this.getStudentId();
     }
-    async getStudents() {
-        const result = await dbconnection_1.default.query(
-            `SELECT studentid, firstname, lastname, department FROM students`
-        );
-        return result.rows;
-    }
-    async getStudentById(id) {
-        const result = await dbconnection_1.default.query(
-            `SELECT studentid, firstname, lastname, department FROM students WHERE studentid = $1`,
-            [id]
-        );
-        return result.rows[0] || null;
-    }
 }
 exports.Student = Student;

@@ -15,6 +15,4 @@ export abstract class StudentDef {
   abstract setDepartment(department: string): void;
 
   abstract addStudent(): Promise<number>;
-  abstract getStudents(): Promise<any[]>;
-  abstract getStudentById(id: number): Promise<any>;
 }

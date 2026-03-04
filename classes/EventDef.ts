@@ -18,6 +18,4 @@ export abstract class EventDef {
   abstract setMaxParticipants(n: number): void;
 
   abstract addEvent(): Promise<number>;
-  abstract getEvents(): Promise<any[]>;
-  abstract getEventById(id: number): Promise<any>;
 }

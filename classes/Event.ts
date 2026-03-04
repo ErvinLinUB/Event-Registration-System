@@ -33,21 +33,6 @@ export class Event extends EventDef {
     return this.getEventId();
   }
 
-  async getEvents(): Promise<any[]> {
-    const result = await pool.query(
-      `SELECT eventid, eventname, eventdate, numofparticipantsregistered, maxparticipants FROM events`
-    );
-    return result.rows;
-  }
-
-  async getEventById(id: number): Promise<any> {
-    const result = await pool.query(
-      `SELECT eventid, eventname, eventdate, numofparticipantsregistered, maxparticipants FROM events WHERE eventid = $1`,
-      [id]
-    );
-    return result.rows[0] || null;
-  }
-
   static async registerStudent(studentId: number, eventId: number): Promise<void> {
     const existing = await pool.query(
       `SELECT * FROM registrations WHERE studentid = $1`,

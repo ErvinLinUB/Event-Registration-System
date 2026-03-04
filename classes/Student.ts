@@ -27,19 +27,4 @@ export class Student extends StudentDef {
     this.setStudentId(result.rows[0].studentid);
     return this.getStudentId();
   }
-
-  async getStudents(): Promise<any[]> {
-    const result = await pool.query(
-      `SELECT studentid, firstname, lastname, department FROM students`
-    );
-    return result.rows;
-  }
-
-  async getStudentById(id: number): Promise<any> {
-    const result = await pool.query(
-      `SELECT studentid, firstname, lastname, department FROM students WHERE studentid = $1`,
-      [id]
-    );
-    return result.rows[0] || null;
-  }
 }
