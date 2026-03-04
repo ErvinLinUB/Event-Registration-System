@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Registration System</title>
+  <title>View Events</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <li><a href="addStudent.html">Add Students</a></li>
       <li><a href="viewStudents.html">View Students</a></li>
       <li><a href="addEvent.html">Add Events</a></li>
-      <li><a href="viewEvents.html">View Events</a></li>
+      <li><a href="viewEvents.html" class="active">View Events</a></li>
       <li><a href="registration.html">Register</a></li>
     </ul>
   </nav>
@@ -25,27 +25,27 @@
   <div class="page-wrapper">
 
     <div class="page-header">
-      <h1>Event Registration System</h1>
-      <p class="subtitle">Manage students, events, and registrations</p>
-    </div>
-
-    <div class="name">
-      <strong>Ervin Lin</strong>
-      Object Oriented System Development - Assignment 1
+      <h2>View Events</h2>
+      <p class="subtitle">All scheduled events</p>
     </div>
 
     <div class="container">
-      <div class="button-container">
-        <button id="btnStudents">Add Students</button>
-        <button id="btnViewStudents">View Students</button>
-        <button id="btnEvents">Add Events</button>
-        <button id="btnViewEvents">View Events</button>
-        <button id="btnRegistration">Registration</button>
-      </div>
+      <table id="eventsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Number of Participants Registered</th>
+            <th>Max Participants</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
   </div>
 
-  <script src="nav.js"></script>
+  <script src="viewEventsScript.js"></script>
 </body>
 </html>

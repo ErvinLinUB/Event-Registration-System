@@ -33,6 +33,11 @@ export class Event extends EventDef {
     return this.getEventId();
   }
 
+  async getEvents(): Promise<any[]> {
+    const result = await pool.query(`SELECT * FROM events`);
+    return result.rows;
+  }
+
   static async registerStudent(studentId: number, eventId: number): Promise<void> {
     const existing = await pool.query(
       `SELECT * FROM registrations WHERE studentid = $1`,

@@ -7,4 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnRegistration = document.getElementById("btnRegistration");
   if (btnRegistration) btnRegistration.addEventListener("click", () => { window.location.href = "registration.html"; });
+
+  const btnViewStudents = document.getElementById("btnViewStudents");
+  if (btnViewStudents) btnViewStudents.addEventListener("click", () => { window.location.href = "viewStudents.html"; });
+
+  const btnViewEvents = document.getElementById("btnViewEvents");
+  if (btnViewEvents) btnViewEvents.addEventListener("click", () => { window.location.href = "viewEvents.html"; });
 });

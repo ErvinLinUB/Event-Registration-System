@@ -27,4 +27,9 @@ export class Student extends StudentDef {
     this.setStudentId(result.rows[0].studentid);
     return this.getStudentId();
   }
+
+  async getStudents(): Promise<any[]> {
+    const result = await pool.query(`SELECT * FROM students`);
+    return result.rows;
+  }
 }
